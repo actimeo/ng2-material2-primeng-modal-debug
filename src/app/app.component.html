@@ -1,11 +1,23 @@
-<md-sidenav-layout>
-    <md-sidenav #start mode="over" opened="true" (open)="mybutton.focus()">
-      Sidenav.
-      <br>
-      <button #mybutton (click)="start.close()">Close</button>
-    </md-sidenav>
+<p-dialog header="Title" [(visible)]="displayOutside" modal="true">
+  Content
+</p-dialog>
 
-    My regular content. This will be moved into the proper DOM at runtime.
-    <button #mybutton (click)="start.open()">Open</button>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  </md-sidenav-layout>
+<md-sidenav-layout>
+  <md-sidenav #start mode="over" opened="true" (open)="mybutton.focus()">
+    Sidenav.
+    <br>
+    <button #mybutton (click)="start.close()">Close</button>
+  </md-sidenav>
+
+  My regular content. This will be moved into the proper DOM at runtime.
+  <br><button #mybutton (click)="start.open()">Open sidenav</button>
+
+  <br><button type="text" (click)="showDialogInside()">Show dialog inside sidenav-layout</button>
+  <br><button type="text" (click)="showDialogOutside()">Show dialog outside sidenav-layout</button>
+
+  <p-dialog header="Title" [(visible)]="displayInside" modal="true">
+    Content
+  </p-dialog>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</md-sidenav-layout>
